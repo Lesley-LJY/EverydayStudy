@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>new.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">  
+  
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style>
+      html, body {
+        height: 100%;
+      }
+      h1 {
+        text-align: center;
+      }
+      form {
+        width: 700px;
+        margin: 0 auto
+      }
+      ul {
+        list-style: none;
+      }
+      span {
+        font-size: 12px;
+        color: #ff0000;
+      }
+      label {
+        width: 50px;
+        display: inline-block;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      div{
+      	padding:5px 10px; 
+      	background-color: #0e90d2;
+      	color: #ffffff;
+      	display: inline-block;
+      	margin-left: 40px;
+      }
+    </style>
+    
+    <script>
+	function getValue()
+	{
+		var value = document.getElementById("rangeInput").value;
+		var result = document.getElementById("result");
+		result.innerText = value;
+	}
+	</script>
+	
+  </head>
+  
+  <body>
+    <h1>学生注册</h1>
+    <form action="">
+      <ul>
+        <li>
+          <label for="user">用户名</label>
+          <input type="text" id="user" placeholder="20135930" required="true">
+          <span>*请输入学号</span>
+        </li>
+
+        <li>
+          <label for="pass">密码</label>
+          <input type="password" id="pass" required="true">
+          <span>*请输入密码</span>
+        </li>
+
+        <li>
+          <label for="habit">爱好</label>
+          <input type="checkbox" value="足球" name="tiyu">足球 
+          <input type="checkbox" value="篮球" name="tiyu">篮球
+        </li>
+        
+        <li>
+          <label for="sex">性别</label>
+          <input type="radio" value="男" name="sex">男 
+          <input type="radio" value="女" name="sex">女              
+          <input type=hidden value="abc" name="hiddenfield">
+        </li>
+        
+        <li>
+          <label for="jianma">简码</label>
+          <input type="text" id="jianma" placeholder="A123456"multiple="true" required="true">
+          <span>*长度在6~10个字符之间，只能是字母数字和下划线，且第一个必须是字母</span>
+        </li>
+
+        <li>
+          <label>学历</label>
+                <select name="xueli">
+                  <option value="novalue">请选择</option>
+                  <option value="zhuanke">专科</option>
+                  <option value="zhuanke">本科</option>
+                  <option value="zhuanke">研究生</option>
+                </select>
+        </li>
+
+        <li>
+          <label>上传</label>
+          <input type="file" name="file1" maxlength="50" size="30">
+        </li>
+
+        <li>
+          <label>邮箱</label>
+          <input type="email" name="inputEmail" id="inputEmail" multiple="true" required="true">
+          <span>*请输入邮箱</span>
+        </li>
+
+        <li>
+          <label>时间</label>
+          <input type="time">
+          <input type="datetime-local">
+        </li>
+
+        <li>
+          <label>日期</label>
+          <input type="date">
+        </li>
+
+        <li>
+          <label>周次</label>
+          <input type="week">
+        </li>
+
+        <li>
+          <label>月份</label>
+          <input type="month">
+        </li>
+
+        <li>
+          <label>分数</label>
+          <input id="rangeInput" type="range" min="0" max="100"  onChange="getValue()">
+          <span id="result"></span>
+        </li>
+
+        <li>
+          <label>搜索</label>
+          <input type="search">
+        </li>
+
+        <li>
+          <label>数字</label>
+          <input type="number" step="5">
+        </li>
+      </ul>
+      <div class="submit" >提交表单</div>
+    </form>
+  </body>
+  <script>
+    document.querySelector("#jianma").addEventListener("blur", function(event) {
+        var target = event.target;
+        var val = target.value;
+        if(/^[A-Za-z][A-Za-z0-9_]{5,9}$/.test(val)) {
+          alert("简码填写正确");
+        }else{
+          alert("简码填写失败");
+        }
+    }, false);
+    document.querySelector(".submit").addEventListener("click", function(event) {
+    	var val = document.querySelector("#jianma").value;
+    	if(/^[A-Za-z][A-Za-z0-9_]{5,9}$/.test(val)) {
+          document.forms[0].submit();
+        }else{
+          alert("表单提交失败");
+        }
+    }, false)
+  </script>
+</html>
