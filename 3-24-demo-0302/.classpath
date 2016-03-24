@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="E:/我的大学四年/大三下学期/1-----专业课程-----1/Web应用程序设计与开发/老师的代码/JDBC-连接实例/需要的软件/老师的软件/sqljdbc4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
