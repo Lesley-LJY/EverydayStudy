@@ -13,5 +13,5 @@
     git pull --rebase origin master
 ### 6、把本地库的内容推送到远程，使用 git push命令，实际上是把当前分支master推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。
     git push -u origin master
-### 状态查询命令
+### 7、状态查询命令
     git status
