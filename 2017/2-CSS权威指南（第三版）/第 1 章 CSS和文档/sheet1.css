@@ -1,0 +1,13 @@
+body{
+    background-color: white;
+    font: medium serif;
+}
+
+h1{
+    color: blue;
+}
+
+p{
+    margin-left: 5%;
+    margin-right: 10%;
+}
